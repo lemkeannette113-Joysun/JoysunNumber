@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 font-sans overflow-hidden;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+}
+
+.number-block {
+  @apply flex items-center justify-center text-2xl font-bold rounded-lg transition-all duration-200 cursor-pointer select-none;
+}
+
+.number-block-selected {
+  @apply ring-4 ring-emerald-400 bg-emerald-500 text-white shadow-[0_0_20px_rgba(52,211,153,0.5)];
+}
+
+@keyframes pulse-target {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.animate-pulse-target {
+  animation: pulse-target 2s infinite ease-in-out;
+}
+

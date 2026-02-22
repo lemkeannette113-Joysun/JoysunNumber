@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 数字叠叠乐：求和消除 (SumStack)
 
-# Run and deploy your AI Studio app
+一款基于数学求和的消除类益智游戏。
 
-This contains everything you need to run your app locally.
+## 核心玩法
+- 点击方块使数字相加等于目标数字。
+- 成功凑出目标数字后，选中的方块会被消除。
+- 防止方块堆积到屏幕顶部。
 
-View your app in AI Studio: https://ai.studio/apps/0dde40d7-4214-4a91-91bb-83aec3ca8124
+## 部署到 Vercel 指南
 
-## Run Locally
+### 1. 准备 GitHub 仓库
+1. 在 GitHub 上创建一个新的仓库。
+2. 在本地终端执行以下命令（假设你已经下载了代码）：
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin <你的仓库地址>
+   git push -u origin main
+   ```
 
-**Prerequisites:**  Node.js
+### 2. 在 Vercel 上部署
+1. 登录 [Vercel](https://vercel.com/)。
+2. 点击 **Add New** -> **Project**。
+3. 导入你刚刚创建的 GitHub 仓库。
+4. **关键步骤：配置环境变量**
+   - 在 **Environment Variables** 部分，添加 `GEMINI_API_KEY`。
+   - 值为你从 Google AI Studio 获取的 API Key。
+5. 点击 **Deploy**。
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 本地开发
+```bash
+npm install
+npm run dev
+```
